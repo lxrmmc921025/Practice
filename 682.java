@@ -1,5 +1,6 @@
 class Solution {
     public int calPoints(String[] ops) {
+        //if use linkedlist to implement list interface, can use get to retrieval
         Deque<Integer> stack =  new LinkedList<>();
         int num = 0, sum = 0;
         
@@ -16,7 +17,8 @@ class Solution {
             } else if (c == 'C') {
                 num = 0 - stack.poll();
             } else {
-                num = convert(s);
+                //convert string to integer
+                num = Integer.parseInt(s);
                 stack.push(num);
             }
             sum += num;
@@ -35,7 +37,7 @@ class Solution {
                 num = 0 - cur;
                 cur = pre;
             } else {
-                num = convert(s);
+                num = Integer.parseInt(s);
             }
             if (c != 'C') {
                 pre = cur;
@@ -46,20 +48,5 @@ class Solution {
         */
         
         return sum;
-    }
-    
-    private static int convert(String s) {
-        char[] ch = s.toCharArray();
-        int num = 0;
-        boolean negative = false;
-        for (char c : ch) {
-        //!!integer can be negative and larger than 10
-            if (c == '-') {
-        		negative = true;
-        		continue;
-        	}
-            num = num * 10 + (c - '0');
-        }
-        return negative ? - num : num;
     }
 }
