@@ -30,7 +30,7 @@ class Solution {
         int num = 0;
         boolean negative = false;
         for (char c : ch) {
-        	//!!integer can be negative and larger than 10
+        //!!integer can be negative and larger than 10
             if (c == '-') {
         		negative = true;
         		continue;
