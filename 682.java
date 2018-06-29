@@ -21,6 +21,29 @@ class Solution {
             }
             sum += num;
         }
+
+        /*
+        //not valid for "C", "+" situation, because need prev data  
+        int pre = 0, cur = 0;
+        for (String s : ops) {
+            char c = s.charAt(0);
+            if (c == '+') {
+                num = pre + cur;
+            } else if (c == 'D') {
+                num = 2 * cur;
+            } else if (c == 'C') {
+                num = 0 - cur;
+                cur = pre;
+            } else {
+                num = convert(s);
+            }
+            if (c != 'C') {
+                pre = cur;
+                cur = num;
+            }
+            sum += num;
+        }
+        */
         
         return sum;
     }
