@@ -16,14 +16,13 @@ class Solution {
         
         int start = 0, end = 0;
         for (int i = 0; i < ch.length; i++) {
-            int ce = map[ch[i] - 'a'];
-            
-            if (ce == end) {
+            //update first : we have to get current interval first, 
+            //then compare with char interval, cause map maintain last appear position of char
+            //so current char interval end in i 
+            end = Math.max(end, map[ch[i]-'a']);
+            if(end == i){
                 res.add(end - start + 1);
-                start = ce + 1;
-                end = ce + 1;
-            } else {
-                end = Math.max(ce, end);
+                start = end + 1;
             }
         }
         //end for last element must be the length - 1 of string, so last char will be definitly updated
