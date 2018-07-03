@@ -1,4 +1,7 @@
 class Solution {
+    /*
+        M2：using hashmap，https://leetcode.com/problems/longest-absolute-file-path/discuss/86719/Two-different-solutions-in-java-using-stack-and-hashmap
+    */
     public int lengthLongestPath(String input) {
         //split into string array
         String[] str = input.split("\n");
